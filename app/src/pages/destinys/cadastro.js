@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import useDestiny from "@/hooks/useDestiny";
 import { instance } from "@/config/configAxios";
 import CardDestiny from "@/components/CardDestiny";
+import { useRouter } from "next/router";
+import Modal from "@/components/Modal";
 
 
 export default function cadastro() {
@@ -14,7 +16,10 @@ export default function cadastro() {
     const [estado, setEstado] = useState("");
     const [detalhes, setDetalhes] = useState("");
     const [pais, setPais] = useState("");
-    const [response, setResponse] = useState()
+    const [response, setResponse] = useState();
+    const [id, setId] = useState()
+
+    const { destiny } = useDestiny(id);
 
     function handleSubmit(event) {
         event.preventDefault()
@@ -24,7 +29,8 @@ export default function cadastro() {
             Estado: estado,
             Pais: pais,
             Detalhes: detalhes,
-            Img: image
+            Img: image,
+
         }).then(res => {
             setResponse(res.data)
         });
@@ -38,6 +44,7 @@ export default function cadastro() {
             </Head>
 
             <section className="container my-5">
+                <Modal destiny={destiny} />
 
                 <form className={style.form} onSubmit={handleSubmit}>
                     <span className={style.title}>Cadastrar destino</span>
@@ -97,7 +104,7 @@ export default function cadastro() {
                     <input type="text" className={style.input} onChange={(event) => setImage(event.target.value)} placeholder="Imagem" />
                     <input type="text" className={style.input} onChange={(event) => setEstado(event.target.value)} placeholder="Estado" />
                     <input type="text" className={style.input} onChange={(event) => setPais(event.target.value)} placeholder="País" />
-                    <textarea className={style.input + " " + style.textarea} onChange={(event) => setDetalhes(event.target.value)} placeholder="Detalhes"></textarea>
+                    <textarea className={style.input + " " + style.textarea} onChange={(event) => setDetalhes(event.target.value)} placeholder="Detalhes" ></textarea>
 
                     <button className={style.button}>Cadastrar</button>
                 </form>
@@ -111,7 +118,16 @@ export default function cadastro() {
                             <img src={destiny.img} className="card-img-top" alt="..." />
 
                             <div className={style.badges}>
-                                <span className="badge text-bg-warning mx-2">Editar</span>
+
+                                <button
+                                    type="button"
+                                    className="badge text-bg-warning"
+                                    data-bs-toggle="modal"
+                                    data-bs-target={"#Modal"}
+                                    onClick={() => setId(destiny.id)}
+                                >
+                                    Editar
+                                </button>
                                 <span className="badge text-bg-danger" onClick={() => deletarDestino(destiny.id)}>Remover</span>
                             </div>
                         </div>

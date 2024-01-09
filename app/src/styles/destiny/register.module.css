@@ -10,6 +10,19 @@
     margin: auto;
 }
 
+.modal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 100px 100px 80px rgba(0, 0, 0, 0.03);
+    margin: auto;
+}
+
 .title {
     color: black;
     font-weight: bold;
