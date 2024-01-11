@@ -232,3 +232,4 @@ C:\Users\maicon\Documents\recode\modulo-6\API\API\bin\Debug\net8.0\runtimes\win\
 C:\Users\maicon\Documents\recode\modulo-6\API\API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\maicon\Documents\recode\modulo-6\API\API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\maicon\Documents\recode\modulo-6\API\API\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\maicon\Documents\recode\modulo-6\API\API\obj\Debug\net8.0\API.sourcelink.json

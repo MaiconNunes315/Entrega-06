@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240106195157_correcaoDetalhes")]
-    partial class correcaoDetalhes
+    [Migration("20240109003759_database")]
+    partial class database
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -185,7 +185,7 @@ namespace API.Migrations
                             Cidade = "Santiago",
                             Detalhes = "Santiago é a capital do Chile, uma cidade vibrante e moderna com uma rica herança cultural e histórica. Com diversas atrações turísticas, como a Plaza de Armas, é um destino popular para quem busca arte e história.",
                             Estado = "Santiago",
-                            Img = "https://i3.visitchile.com/img/GalleryContent/615/COSTANERA_CENTER.jpg",
+                            Img = "https://f.i.uol.com.br/fotografia/2023/10/25/169826186065396b649cfd8_1698261860_3x2_rt.jpg",
                             Pais = "Chile"
                         },
                         new

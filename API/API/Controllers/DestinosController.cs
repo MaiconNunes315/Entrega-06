@@ -66,7 +66,7 @@ namespace API.Controllers
 
         // PUT: api/Destinos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("/atualizar/{id}")]
         public async Task<IActionResult> PutDestino(int id, Destino destino)
         {
             if (id != destino.Id)
